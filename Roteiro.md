@@ -82,8 +82,8 @@ Utilizando o GridLayout, os componentes adaptam-se ao tamanho da janela. Por ser
 
 **3.** Após a conclusão do passo 3, o que aconteceu com os componentes da tela ao redimensionar a janela? Justifique sua resposta. 
 #### Resposta
-  Utilizando os componentes em um JPanel com FlowLayout ao redimensionar a tela o tamanho dos componentes não é alterado, apenas a posição adequa-se à nova dimensão, devido ao GridLayout. Ao usar o FlowLayout os componentes não tem seus tamnhos alterados, mas, como este FlowLayout está dentro de um GridLayout, a posição muda. <br>
+  Utilizando os componentes em um JPanel com FlowLayout ao redimensionar a tela o tamanho dos componentes não é alterado, apenas a posição adequa-se à nova dimensão, devido ao GridLayout. Ao usar o FlowLayout os componentes não tem seus tamanhos alterados, mas, como este FlowLayout está dentro de um GridLayout, a posição muda. <br>
 
 **4.** Na sua opinião, qual a importância do uso dos diferentes layouts usados no contexto do desenvolvimento de interfaces gráficas?
 #### Resposta
-Cada layout pode ser utilizado em casos específicos, ao utilizar um conjunto de deles na mesma tela as possíbilidades aumentão consideravelmente. A importância desta variedade está no conforto que a boa utilização dos layouts trará para o usuário, além de adaptar a tela do programa a diferentes displays, uma característica imprescindível de uma interface gráfica bem desenvolvida.  
+Cada layout pode ser utilizado em casos específicos, ao utilizar um conjunto de deles na mesma tela as possibilidades aumentam consideravelmente. A importância desta variedade está no conforto que a boa utilização dos layouts trará para o usuário, além de adaptar a tela do programa a diferentes displays, uma característica imprescindível de uma interface gráfica bem desenvolvida.  
