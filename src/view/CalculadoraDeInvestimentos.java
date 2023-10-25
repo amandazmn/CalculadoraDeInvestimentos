@@ -79,7 +79,7 @@ public class CalculadoraDeInvestimentos extends JFrame {
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Total investido + juros R$:");
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setBounds(52, 150, 136, 14);
+		lblNewLabel_1_1_1.setBounds(34, 150, 165, 14);
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnNewButton = new JButton("Calcular");

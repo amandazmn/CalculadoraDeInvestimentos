@@ -33,7 +33,6 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 	private JTextField txtDeposito;
 	private JTextField txtNumMeses;
 	private JTextField txtJurosMes;
-	private final JPanel panel = new JPanel();
 
 	/**
 	 * Launch the application.
@@ -66,18 +65,22 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Sobre");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Sobre janelaSobre = new Sobre();
+				janelaSobre.setVisible(true);
+			}
+		});
 		mnNewMenu.add(mntmNewMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(5, 2, 0, 0));
-		contentPane.add(panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblDepositoMensal = new JLabel("Depósito mensal R$:");
+		contentPane.add(lblDepositoMensal);
 		lblDepositoMensal.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblDepositoMensal);
 		
 		JPanel panel_4 = new JPanel();
 		contentPane.add(panel_4);
@@ -87,13 +90,9 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 		panel_4.add(txtDeposito);
 		txtDeposito.setColumns(10);
 		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
 		JLabel lblNumMeses = new JLabel("Num. de meses: ");
+		contentPane.add(lblNumMeses);
 		lblNumMeses.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(lblNumMeses);
 		
 		JPanel panel_5 = new JPanel();
 		contentPane.add(panel_5);
@@ -103,13 +102,9 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 		panel_5.add(txtNumMeses);
 		txtNumMeses.setColumns(10);
 		
-		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2);
-		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
 		JLabel lblJurosMes = new JLabel("Juros ao mês %:");
+		contentPane.add(lblJurosMes);
 		lblJurosMes.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_2.add(lblJurosMes);
 		
 		JPanel panel_6 = new JPanel();
 		contentPane.add(panel_6);
@@ -119,13 +114,9 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 		panel_6.add(txtJurosMes);
 		txtJurosMes.setColumns(10);
 		
-		JPanel panel_3 = new JPanel();
-		contentPane.add(panel_3);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
 		JLabel lblTotal = new JLabel("Total investido + juros R$:");
+		contentPane.add(lblTotal);
 		lblTotal.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_3.add(lblTotal);
 		
 		JLabel lbllTotal = new JLabel("");
 		contentPane.add(lbllTotal);
@@ -136,9 +127,9 @@ public class CalculadoraInvestimentoGrid extends JFrame {
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				float deposito = Float.valueOf(txtDeposito.getText());
+				double deposito = Double.valueOf(txtDeposito.getText());
 				int meses = Integer.valueOf(txtNumMeses.getText());
-				float juros = Float.valueOf(txtJurosMes.getText());
+				double juros = Double.valueOf(txtJurosMes.getText());
 				Investimento i = new Investimento(meses, juros, deposito);
 				Double total = i.calculaTotal();
 				lbllTotal.setText(String.format("%.2f", total));
